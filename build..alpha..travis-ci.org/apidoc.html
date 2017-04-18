@@ -1,0 +1,1584 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/NoDivide/astrum#readme"
+
+    >astrum (v1.9.3)</a>
+</h1>
+<h4>A lightweight pattern library designed to be included with any web project.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.astrum">module astrum</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">astrum.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.astrum.utils">module astrum.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.componentExists">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>componentExists
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.createComponentFiles">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>createComponentFiles
+            <span class="apidocSignatureSpan">(component)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.createComponentFolder">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>createComponentFolder
+            <span class="apidocSignatureSpan">(component_path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.createGroupDescription">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>createGroupDescription
+            <span class="apidocSignatureSpan">(group_path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.createGroupFolder">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>createGroupFolder
+            <span class="apidocSignatureSpan">(group_path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.deleteComponentFiles">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>deleteComponentFiles
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.deleteGroupFolder">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>deleteGroupFolder
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getComponent">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getComponent
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getComponentChangePositionChoices">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentChangePositionChoices
+            <span class="apidocSignatureSpan">(component)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getComponentIndex">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentIndex
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getComponentPositionChoices">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentPositionChoices
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getConfig">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getData">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupChangePositionChoices">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupChangePositionChoices
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupChoices">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupChoices
+            <span class="apidocSignatureSpan">(exclude_group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupComponentCount">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupComponentCount
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupCount">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupCount
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupIndex">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupIndex
+            <span class="apidocSignatureSpan">(group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.getGroupPositionChoices">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupPositionChoices
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.groupExists">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>groupExists
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.init">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.moveComponentFiles">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>moveComponentFiles
+            <span class="apidocSignatureSpan">(original_component, edited_component)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.moveGroupFolder">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>moveGroupFolder
+            <span class="apidocSignatureSpan">(original_group, edited_group)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.outputList">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>outputList
+            <span class="apidocSignatureSpan">(components, groups)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.pathify">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>pathify
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.saveConfig">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>saveConfig
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.saveData">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>saveData
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.setup">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>setup
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.update">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>update
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.updateVersion">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>updateVersion
+            <span class="apidocSignatureSpan">(number)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.validateComponent">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>validateComponent
+            <span class="apidocSignatureSpan">(group_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.validateSlug">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>validateSlug
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.astrum.utils.validateString">
+            function <span class="apidocSignatureSpan">astrum.utils.</span>validateString
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">astrum.utils.</span>module_path</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.astrum" id="apidoc.module.astrum">module astrum</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.astrum.utils" id="apidoc.module.astrum.utils">module astrum.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.componentExists" id="apidoc.element.astrum.utils.componentExists">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>componentExists
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">componentExists = function (group_name) {
+    var _this = this,
+        parts = group_name.split(&#x22;/&#x22;),
+        groupIndex = _this.getGroupIndex(parts[0]);
+
+    if (groupIndex !== -1) {
+        for (var i = 0; i &#x3c; _this.$data.groups[groupIndex].components.length; i++) {
+            var c = _this.$data.groups[groupIndex].components[i];
+
+            if (c.name == parts[1]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Check format
+    if (parts.length !== 2) {
+        console.log(chalk.red(&#x27;Error: A new component name must comprise of a group, a single forward-slash, and a name e.g
+. buttons/default.&#x27;));
+        return false;
+    }
+
+    // Check for duplication
+    if (this.<span class="apidocCodeKeywordSpan">componentExists</span>(group_name)) {
+        console.log(chalk.red(&#x27;Error: A component with the name &#x22;%s&#x22; already exists in the &#x22;%s&#x22; group.&#
+x27;), parts[1], parts[0]);
+        return false;
+    }
+
+    return true;
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.createComponentFiles" id="apidoc.element.astrum.utils.createComponentFiles">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>createComponentFiles
+        <span class="apidocSignatureSpan">(component)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createComponentFiles = function (component) {
+    var _this = this,
+        group_path = this.$config.path + &#x27;/components/&#x27; + component.group,
+        component_path = group_path + &#x27;/&#x27; + component.name,
+        error = false;
+
+    fs.exists(_this.pathify(group_path), function(r) {
+        if(r) {
+            _this.createComponentFolder(component_path);
+        } else {
+            _this.createGroupFolder(group_path, function() {
+                _this.createComponentFolder(component_path);
+            });
+        }
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.createComponentFolder" id="apidoc.element.astrum.utils.createComponentFolder">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>createComponentFolder
+        <span class="apidocSignatureSpan">(component_path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createComponentFolder = function (component_path, callback) {
+    callback = typeof callback !== &#x27;undefined&#x27; ? callback : function(){};
+
+    var _this = this,
+        error = false;
+
+    fs.mkdir(_this.pathify(component_path), function(err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+            return;
+        }
+
+        fs.writeFile(_this.pathify(component_path + &#x27;/markup.html&#x27;), &#x27;&#x27;, function(err) {
+            if (err) {
+                console.log(chalk.red(&#x27;Error: &#x27; + err));
+                error = true;
+                return;
+            }
+
+            fs.writeFile(_this.pathify(component_path + &#x27;/description.md&#x27;), &#x27;&#x27;, function(err) {
+                if (err) {
+                    console.log(chalk.red(&#x27;Error: &#x27; + err));
+                    error = true;
+                    return;
+                }
+
+                return callback();
+            });
+        });
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _this = this,
+    group_path = this.$config.path + &#x27;/components/&#x27; + component.group,
+    component_path = group_path + &#x27;/&#x27; + component.name,
+    error = false;
+
+fs.exists(_this.pathify(group_path), function(r) {
+    if(r) {
+        _this.<span class="apidocCodeKeywordSpan">createComponentFolder</span>(component_path);
+    } else {
+        _this.createGroupFolder(group_path, function() {
+            _this.createComponentFolder(component_path);
+        });
+    }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.createGroupDescription" id="apidoc.element.astrum.utils.createGroupDescription">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>createGroupDescription
+        <span class="apidocSignatureSpan">(group_path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createGroupDescription = function (group_path) {
+    var _this = this;
+
+    fs.exists(_this.pathify(group_path + &#x27;/description.md&#x27;), function(r) {
+
+        if(!r) {
+            fs.writeFile(_this.pathify(group_path + &#x27;/description.md&#x27;), &#x27;&#x27;, function(err) {
+                if (err) {
+                    console.log(chalk.red(&#x27;Error: &#x27; + err));
+                    error = true;
+                    return;
+                }
+            });
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    fs.mkdir(group_path, function(err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+            return;
+        }
+
+        _this.<span class="apidocCodeKeywordSpan">createGroupDescription</span>(group_path);
+
+        return callback();
+    });
+},
+
+createGroupDescription: function(group_path) {
+    var _this = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.createGroupFolder" id="apidoc.element.astrum.utils.createGroupFolder">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>createGroupFolder
+        <span class="apidocSignatureSpan">(group_path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createGroupFolder = function (group_path, callback) {
+    var _this = this;
+
+    callback = typeof callback !== &#x27;undefined&#x27; ? callback : function(){};
+
+    fs.mkdir(group_path, function(err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+            return;
+        }
+
+        _this.createGroupDescription(group_path);
+
+        return callback();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        component_path = group_path + &#x27;/&#x27; + component.name,
+        error = false;
+
+    fs.exists(_this.pathify(group_path), function(r) {
+        if(r) {
+            _this.createComponentFolder(component_path);
+        } else {
+            _this.<span class="apidocCodeKeywordSpan">createGroupFolder</span>(group_path, function() {
+                _this.createComponentFolder(component_path);
+            });
+        }
+    });
+
+    return ! error;
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.deleteComponentFiles" id="apidoc.element.astrum.utils.deleteComponentFiles">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>deleteComponentFiles
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteComponentFiles = function (group_name) {
+    var _this = this,
+        component_path = this.$config.path + &#x27;/components/&#x27; + group_name,
+        error = false;
+
+    fs.remove(_this.pathify(component_path), function(err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+        }
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.deleteGroupFolder" id="apidoc.element.astrum.utils.deleteGroupFolder">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>deleteGroupFolder
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteGroupFolder = function (group) {
+    var _this = this,
+        group_path = this.$config.path + &#x27;/components/&#x27; + group,
+        error = false;
+
+    fs.remove(_this.pathify(group_path), function(err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+        }
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getComponent" id="apidoc.element.astrum.utils.getComponent">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getComponent
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComponent = function (group_name) {
+    var _this = this,
+        parts = group_name.split(&#x27;/&#x27;);
+
+    for(var i = 0; i &#x3c; _this.$data.groups.length; i++) {
+        for(var j = 0; j &#x3c; _this.$data.groups[i].components.length; j++) {
+            var c = _this.$data.groups[i].components[j];
+
+            if(c.group == parts[0] &#x26;&#x26; c.name == parts[1]) {
+                return c;
+            }
+        }
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getComponentChangePositionChoices" id="apidoc.element.astrum.utils.getComponentChangePositionChoices">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentChangePositionChoices
+        <span class="apidocSignatureSpan">(component)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComponentChangePositionChoices = function (component) {
+    var _this = this,
+        choices = [],
+        message,
+        currentPosition = null,
+        groupIndex = _this.getGroupIndex(component.group),
+        first = true,
+        passedCurrentPosition = false;
+
+    for (var i = 0; i &#x3c; _this.$data.groups[groupIndex].components.length; i++) {
+        var c = _this.$data.groups[groupIndex].components[i];
+
+        if(first &#x26;&#x26; c.name != component.name) {
+            choices.push({
+                name: &#x27;Position first&#x27;,
+                value: 0
+            });
+        }
+        first = false;
+
+        if(c.name == component.name) {
+            if(i != 0) choices.pop();
+            currentPosition = i;
+            passedCurrentPosition = true;
+        }
+
+        if(c.name != component.name) {
+            choices.push({
+                name: &#x27;Position after &#x27; + chalk.yellow(c.name),
+                value: passedCurrentPosition ? i : i + 1
+            });
+        }
+    }
+
+    choices.push(new inquirer.Separator());
+
+    message = currentPosition == 0 ? &#x27;Keep current first position&#x27; : &#x27;Keep current position after &#x27; + chalk.yellow(_this.$data.groups
+[groupIndex].components[currentPosition - 1].name);
+
+    choices.push({
+        name: message,
+        value: currentPosition
+    });
+
+    return choices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getComponentIndex" id="apidoc.element.astrum.utils.getComponentIndex">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentIndex
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComponentIndex = function (group_name) {
+    var _this = this,
+        parts = group_name.split(&#x22;/&#x22;),
+        groupIndex = _this.getGroupIndex(parts[0]);
+
+    if (groupIndex !== -1) {
+        for (var i = 0; i &#x3c; _this.$data.groups[groupIndex].components.length; i++) {
+            var c = _this.$data.groups[groupIndex].components[i];
+
+            if (c.name == parts[1]) {
+                return i;
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getComponentPositionChoices" id="apidoc.element.astrum.utils.getComponentPositionChoices">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getComponentPositionChoices
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComponentPositionChoices = function (group) {
+    var _this = this,
+        groupIndex = _this.getGroupIndex(group),
+        choices = [{
+            name: &#x27;Position first&#x27;,
+            value: 0
+        }];
+
+    for (var i = 0; i &#x3c; _this.$data.groups[groupIndex].components.length; i++) {
+        var c = _this.$data.groups[groupIndex].components[i];
+        choices.push({
+            name: &#x27;Position after &#x27; + chalk.yellow(c.name),
+            value: i + 1
+        });
+    }
+
+    return choices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getConfig" id="apidoc.element.astrum.utils.getConfig">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function () {
+    var _this = this;
+
+    return JSON.parse(fs.readFileSync(_this.pathify(_this.$root + &#x27;/astrum-config.json&#x27;)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+/**
+ * Get instance version number.
+ */
+if (program.instance) {
+    try {
+        if(utils.<span class="apidocCodeKeywordSpan">getConfig</span>()) {
+            utils.init();
+            console.log(chalk.grey(&#x22;This Astrum instance version is: &#x22;) + chalk.green(utils.$data.version));
+        }
+    } catch (e) {
+        console.log(chalk.red(&#x22;Astrum has not been initialised.&#x22;));
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getData" id="apidoc.element.astrum.utils.getData">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getData = function () {
+    var _this = this;
+
+    return JSON.parse(fs.readFileSync(_this.pathify(_this.$config.path + &#x27;/data.json&#x27;)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        _this.$config = _this.getConfig();
+    } catch (e) {
+        throw(new Error(chalk.red(&#x22;No astrum-config.json file found in project root.&#x22;)));
+    }
+
+    // Get data.
+    try {
+        _this.$data = _this.<span class="apidocCodeKeywordSpan">getData</span>();
+    } catch (e) {
+        throw(new Error(chalk.red(&#x22;No data.json file found in &#x22; + _this.$config.path )));
+    }
+},
+
+setup: function(path, callback) {
+    var _this = this,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupChangePositionChoices" id="apidoc.element.astrum.utils.getGroupChangePositionChoices">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupChangePositionChoices
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupChangePositionChoices = function (group) {
+    var _this = this,
+        choices = [],
+        message,
+        currentPosition = null,
+        groupIndex = _this.getGroupIndex(group.name),
+        first = true,
+        passedCurrentPosition = false;
+
+    for (var i = 0; i &#x3c; _this.$data.groups.length; i++) {
+        var g = _this.$data.groups[i];
+
+        if(first &#x26;&#x26; g.name != group.name) {
+            choices.push({
+                name: &#x27;Position first&#x27;,
+                value: 0
+            });
+        }
+        first = false;
+
+        if(g.name == group.name) {
+            if(i != 0) choices.pop();
+            currentPosition = i;
+            passedCurrentPosition = true;
+        }
+
+        if(g.name != group.name) {
+            choices.push({
+                name: &#x27;Position after &#x27; + chalk.yellow(g.name),
+                value: passedCurrentPosition ? i : i + 1
+            });
+        }
+    }
+
+    choices.push(new inquirer.Separator());
+
+    message = currentPosition == 0 ? &#x27;Keep current first position&#x27; : &#x27;Keep current position after &#x27; + chalk.yellow(_this.$data.groups
+[groupIndex - 1].name);
+
+    choices.push({
+        name: message,
+        value: currentPosition
+    });
+
+    return choices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupChoices" id="apidoc.element.astrum.utils.getGroupChoices">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupChoices
+        <span class="apidocSignatureSpan">(exclude_group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupChoices = function (exclude_group) {
+    exclude_group = typeof exclude_group !== &#x27;undefined&#x27; ? exclude_group : null;
+
+    var choices = [];
+
+    for (var i = 0; i &#x3c; this.$data.groups.length; i++) {
+        var g = this.$data.groups[i];
+
+        if(exclude_group != g.name) {
+            choices.push({
+                name: g.name,
+                value: g.name
+            });
+        }
+    }
+
+    choices.push(new inquirer.Separator());
+
+    choices.push({
+        name: &#x27;Create a new group...&#x27;,
+        value: &#x27;create_new_group&#x27;
+    });
+
+    return choices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupComponentCount" id="apidoc.element.astrum.utils.getGroupComponentCount">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupComponentCount
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupComponentCount = function (group) {
+    return this.$data.groups[this.getGroupIndex(group)].components.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupCount" id="apidoc.element.astrum.utils.getGroupCount">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupCount
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupCount = function (group) {
+    return this.$data.groups.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupIndex" id="apidoc.element.astrum.utils.getGroupIndex">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupIndex
+        <span class="apidocSignatureSpan">(group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupIndex = function (group) {
+    return this.$data.groups.findIndex(function(item) {
+        return item.name == group;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return item.name == group;
+        });
+    },
+
+    getComponentIndex: function(group_name) {
+        var _this = this,
+            parts = group_name.split(&#x22;/&#x22;),
+            groupIndex = _this.<span class="apidocCodeKeywordSpan">getGroupIndex</span>(parts[0]);
+
+        if (groupIndex !== -1) {
+            for (var i = 0; i &#x3c; _this.$data.groups[groupIndex].components.length; i++) {
+var c = _this.$data.groups[groupIndex].components[i];
+
+if (c.name == parts[1]) {
+    return i;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.getGroupPositionChoices" id="apidoc.element.astrum.utils.getGroupPositionChoices">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>getGroupPositionChoices
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGroupPositionChoices = function () {
+    var choices = [{
+            name: &#x27;Position first&#x27;,
+            value: 0
+        }],
+        n = 1;
+
+    for (var i = 0; i &#x3c; this.$data.groups.length; i++) {
+        var g = this.$data.groups[i];
+
+        choices.push({
+            name: &#x27;Position after &#x27; + g.name,
+            value: n
+        });
+
+        n++;
+    }
+
+    return choices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.groupExists" id="apidoc.element.astrum.utils.groupExists">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>groupExists
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">groupExists = function (group_name) {
+    var parts = group_name.split(&#x22;/&#x22;);
+
+    return this.getGroupIndex(parts[0]) == -1 ? false : true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.init" id="apidoc.element.astrum.utils.init">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+    var _this = this;
+
+    // Get config.
+    try {
+        _this.$config = _this.getConfig();
+    } catch (e) {
+        throw(new Error(chalk.red(&#x22;No astrum-config.json file found in project root.&#x22;)));
+    }
+
+    // Get data.
+    try {
+        _this.$data = _this.getData();
+    } catch (e) {
+        throw(new Error(chalk.red(&#x22;No data.json file found in &#x22; + _this.$config.path )));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Get instance version number.
+ */
+if (program.instance) {
+    try {
+        if(utils.getConfig()) {
+            utils.<span class="apidocCodeKeywordSpan">init</span>();
+            console.log(chalk.grey(&#x22;This Astrum instance version is: &#x22;) + chalk.green(utils.$data.version));
+        }
+    } catch (e) {
+        console.log(chalk.red(&#x22;Astrum has not been initialised.&#x22;));
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.moveComponentFiles" id="apidoc.element.astrum.utils.moveComponentFiles">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>moveComponentFiles
+        <span class="apidocSignatureSpan">(original_component, edited_component)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveComponentFiles = function (original_component, edited_component) {
+    var _this = this,
+        o_path = this.$config.path + &#x27;/components/&#x27; + original_component.group + &#x27;/&#x27; + original_component.name,
+        d_group_path = this.$config.path + &#x27;/components/&#x27; + edited_component.group,
+        d_path = d_group_path + &#x27;/&#x27; + edited_component.name,
+        error = false;
+
+    if(o_path != d_path) {
+        fs.move(_this.pathify(o_path), _this.pathify(d_path), function(err) {
+            if (err) {
+                console.error(chalk.red(&#x27;Error: &#x27; + err));
+                error = true;
+            }
+
+            _this.createGroupDescription(d_group_path);
+        });
+    }
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.moveGroupFolder" id="apidoc.element.astrum.utils.moveGroupFolder">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>moveGroupFolder
+        <span class="apidocSignatureSpan">(original_group, edited_group)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveGroupFolder = function (original_group, edited_group) {
+    var _this = this,
+        oPath = this.$config.path + &#x27;/components/&#x27; + original_group.name,
+        dPath = this.$config.path + &#x27;/components/&#x27; + edited_group.name,
+        error = false;
+
+    if(oPath != dPath) {
+        fs.move(_this.pathify(oPath), _this.pathify(dPath), function(err) {
+            if (err) {
+                console.error(chalk.red(&#x27;Error: &#x27; + err));
+                error = true;
+            }
+        });
+    }
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.outputList" id="apidoc.element.astrum.utils.outputList">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>outputList
+        <span class="apidocSignatureSpan">(components, groups)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">outputList = function (components, groups) {
+
+    console.log();
+    console.log(chalk.grey(&#x27;Legend:&#x27;));
+    console.log(chalk.grey(&#x27;----------------------------------------------------------------&#x27;));
+    console.log(&#x27;[i]: index&#x27;);
+    console.log(&#x27;%s: group&#x27;, chalk.green(&#x27;green&#x27;));
+    console.log(&#x27;%s: component&#x27;, chalk.yellow(&#x27;yellow&#x27;));
+    console.log(chalk.grey(&#x27;----------------------------------------------------------------&#x27;));
+    console.log();
+
+    if(groups.length) {
+        for (var i = 0; i &#x3c; groups.length; i++) {
+            var g = groups[i];
+
+            console.log(&#x27;[%s] %s:&#x27;, i, chalk.green(g.name));
+
+            var k = 0;
+            for (var j = 0; j &#x3c; groups[i].components.length; j++) {
+                var c = groups[i].components[j];
+
+                if (c.group === g.name) {
+                    console.log(&#x27;     %s [%s] %s&#x27;, String.fromCharCode(0x21B3), k, chalk.yellow(c.name));
+                    k++;
+                }
+            }
+        }
+    } else {
+        console.log(&#x27;Your pattern library is empty.&#x27;);
+    }
+
+    console.log();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.pathify" id="apidoc.element.astrum.utils.pathify">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>pathify
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pathify = function (path) {
+    if(isWindows()) {
+        return path.replace(/(\/)/g, &#x22;\\&#x22;);
+    }
+
+    return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        _this.saveConfig(path, function() {
+            mkdirp(path, function (err) {
+                if (err) {
+console.error(chalk.red(&#x27;Error: &#x27; + err));
+error = true;
+                }
+
+                fs.copy(_this.<span class="apidocCodeKeywordSpan">pathify</span>(_this.module_path + &#x27;/_template&#x27;), path
+, function (err) {
+if (err) {
+    console.log(chalk.red(&#x27;Error: &#x27; + err));
+    error = true;
+}
+
+_this.init();
+_this.updateVersion(pjson.version);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.saveConfig" id="apidoc.element.astrum.utils.saveConfig">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>saveConfig
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveConfig = function (path, callback) {
+    var _this = this,
+        error = false;
+
+    fs.writeFile(_this.pathify(this.$root + &#x27;/astrum-config.json&#x27;), JSON.stringify({
+        path: path
+    }, null, 4), function (err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+        }
+
+        return callback();
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        fs.exists(path, function(r) {
+            if (r) {
+throw(new Error(chalk.red(&#x27;Pattern library has already been initialized.&#x27;)));
+            }
+        });
+
+        _this.<span class="apidocCodeKeywordSpan">saveConfig</span>(path, function() {
+            mkdirp(path, function (err) {
+if (err) {
+    console.error(chalk.red(&#x27;Error: &#x27; + err));
+    error = true;
+}
+
+fs.copy(_this.pathify(_this.module_path + &#x27;/_template&#x27;), path, function (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.saveData" id="apidoc.element.astrum.utils.saveData">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>saveData
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveData = function (callback) {
+    var _this = this,
+        error = false;
+
+    fs.writeFile(_this.pathify(_this.$config.path + &#x27;/data.json&#x27;), JSON.stringify(_this.$data, null, 4), function (err) {
+        if (err) {
+            console.log(chalk.red(&#x27;Error: &#x27; + err));
+            error = true;
+        }
+
+        return callback();
+    });
+
+    return ! error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return ! error;
+});
+    },
+
+    updateVersion: function(number) {
+this.$data.version = number;
+
+this.<span class="apidocCodeKeywordSpan">saveData</span>(function(){});
+    },
+
+    update: function(callback) {
+var _this = this;
+
+fs.exists(_this.$config.path, function(r) {
+    if (!r) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.setup" id="apidoc.element.astrum.utils.setup">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>setup
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (path, callback) {
+    var _this = this,
+        error = false;
+
+    fs.exists(path, function(r) {
+        if (r) {
+            throw(new Error(chalk.red(&#x27;Pattern library has already been initialized.&#x27;)));
+        }
+    });
+
+    _this.saveConfig(path, function() {
+        mkdirp(path, function (err) {
+            if (err) {
+                console.error(chalk.red(&#x27;Error: &#x27; + err));
+                error = true;
+            }
+
+            fs.copy(_this.pathify(_this.module_path + &#x27;/_template&#x27;), path, function (err) {
+                if (err) {
+                    console.log(chalk.red(&#x27;Error: &#x27; + err));
+                    error = true;
+                }
+
+                _this.init();
+                _this.updateVersion(pjson.version);
+
+                return callback();
+            });
+        });
+
+        return ! error;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+/**
+ * Initialize pattern library.
+ */
+var path = program.args[0];
+if(path) {
+utils.<span class="apidocCodeKeywordSpan">setup</span>(path, function() {
+    console.log();
+    console.log(chalk.grey(&#x27;----------------------------------------------------------------&#x27;));
+    console.log(chalk.green(&#x27;\u2713 Pattern library initialized successfully.&#x27;));
+    console.log(chalk.grey(&#x27;----------------------------------------------------------------&#x27;));
+    console.log();
+    console.log(chalk.yellow(&#x27;To get started add your first component using:&#x27;));
+    console.log();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.update" id="apidoc.element.astrum.utils.update">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>update
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (callback) {
+    var _this = this;
+
+    fs.exists(_this.$config.path, function(r) {
+        if (!r) {
+            throw(new Error(chalk.red(&#x27;No pattern library found to update.&#x27;)));
+        }
+    });
+
+    fs.copy(_this.pathify(_this.module_path + &#x27;/_template/app&#x27;), _this.$config.path + &#x27;/app&#x27;);
+    fs.copy(_this.pathify(_this.module_path + &#x27;/_template/index.html&#x27;), _this.$config.path + &#x27;/index.html&#x27;);
+    fs.copy(_this.pathify(_this.module_path + &#x27;/_template/LICENSE.txt&#x27;), _this.$config.path + &#x27;/LICENSE.txt&#x27;);
+
+    _this.updateVersion(pjson.version);
+
+<span class="apidocCodeCommentSpan">    /**
+     * Version 1.7.0 introduced customisable titles.
+     * If updating from pre-1.7.0 we need to add in the
+     * default titles.
+     */
+</span>    if(!_this.$data.theme.hasOwnProperty(&#x22;titles&#x22;)) {
+        _this.$data.theme.titles = {
+            &#x22;library_title&#x22;: &#x22;Pattern Library&#x22;,
+            &#x22;pages_title&#x22;: &#x22;Overview&#x22;,
+            &#x22;components_title&#x22;: &#x22;Components&#x22;
+        }
+
+        _this.saveData(function() {});
+    }
+
+    return callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.updateVersion" id="apidoc.element.astrum.utils.updateVersion">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>updateVersion
+        <span class="apidocSignatureSpan">(number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateVersion = function (number) {
+    this.$data.version = number;
+
+    this.saveData(function(){});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        fs.copy(_this.pathify(_this.module_path + &#x27;/_template&#x27;), path, function (err) {
+            if (err) {
+                console.log(chalk.red(&#x27;Error: &#x27; + err));
+                error = true;
+            }
+
+            _this.init();
+            _this.<span class="apidocCodeKeywordSpan">updateVersion</span>(pjson.version);
+
+            return callback();
+        });
+    });
+
+    return ! error;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.validateComponent" id="apidoc.element.astrum.utils.validateComponent">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>validateComponent
+        <span class="apidocSignatureSpan">(group_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateComponent = function (group_name) {
+    var parts = group_name.split(&#x22;/&#x22;);
+
+    // Check format
+    if (parts.length !== 2) {
+        console.log(chalk.red(&#x27;Error: A new component name must comprise of a group, a single forward-slash, and a name e.g. buttons
+/default.&#x27;));
+        return false;
+    }
+
+    // Check for duplication
+    if (this.componentExists(group_name)) {
+        console.log(chalk.red(&#x27;Error: A component with the name &#x22;%s&#x22; already exists in the &#x22;%s&#x22; group.&#x27;), parts[1], parts[0]);
+        return false;
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.validateSlug" id="apidoc.element.astrum.utils.validateSlug">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>validateSlug
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateSlug = function (string) {
+    var slug = string.match(/^[a-z0-9-]+$/);
+
+    return this.validateString(string) &#x26;&#x26; slug &#x26;&#x26; !! slug.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.astrum.utils.validateString" id="apidoc.element.astrum.utils.validateString">
+        function <span class="apidocSignatureSpan">astrum.utils.</span>validateString
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateString = function (string) {
+    return string != &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    return false;
+},
+
+validateSlug: function(string) {
+    var slug = string.match(/^[a-z0-9-]+$/);
+
+    return this.<span class="apidocCodeKeywordSpan">validateString</span>(string) &#x26;&#x26; slug &#x26;&#x26; !! slug.length;
+},
+
+validateString: function(string) {
+    return string != &#x27;&#x27;;
+},
+
+pathify: function(path) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
