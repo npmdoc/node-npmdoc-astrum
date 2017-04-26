@@ -407,22 +407,21 @@
     return false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    // Check format
-    if (parts.length !== 2) {
-        console.log(chalk.red('Error: A new component name must comprise of a group, a single forward-slash, and a name e.g
-. buttons/default.'));
-        return false;
-    }
+/**
+ * Delete individual component.
+ */
+var group_name = program.args[0];
+if (group_name) {
+    var parts = group_name.split('/');
 
-    // Check for duplication
-    if (this.<span class="apidocCodeKeywordSpan">componentExists</span>(group_name)) {
-        console.log(chalk.red('Error: A component with the name "%s" already exists in the "%s" group.&amp;#
-x27;), parts[1], parts[0]);
-        return false;
-    }
+    if (utils.<span class="apidocCodeKeywordSpan">componentExists</span>(group_name) !== false) {
+var componentIndex = utils.getComponentIndex(group_name),
+    groupIndex = utils.getGroupIndex(parts[0]);
 
-    return true;
-},
+inquirer.prompt([
+    {
+        type: 'confirm',
+        name: 'delete',
 ...</pre></li>
     </ul>
 
@@ -453,7 +452,23 @@ x27;), parts[1], parts[0]);
 
     return ! error;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                ]).then(function (answers) {
+                    newGroup.name = parts[0];
+                    newGroup.title = answers.title;
+
+                    utils.$data.groups.splice(answers.group_position, 0, newGroup);
+                    utils.$data.groups[answers.group_position].components = [newComponent];
+
+                    if (utils.<span class="apidocCodeKeywordSpan">createComponentFiles</span>(newComponent)) {
+                        utils.saveData(function () {
+console.log();
+console.log(chalk.grey('----------------------------------------------------------------'));
+console.log(chalk.green('\u2713 Pattern library data saved successfully.'));
+console.log(chalk.grey('----------------------------------------------------------------'));
+
+if (typeColor) {
+...</pre></li>
     </ul>
 
 
@@ -629,7 +644,24 @@ createGroupDescription: function(group_path) {
 
     return ! error;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return;
+            }
+
+            if (answers.delete) {
+var componentCount = utils.getGroupComponentCount(parts[0]);
+
+utils.$data.groups[groupIndex].components.splice(componentIndex, 1);
+utils.<span class="apidocCodeKeywordSpan">deleteComponentFiles</span>(group_name);
+
+if (componentCount == 1) {
+    inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'delete_group',
+            message: chalk.red('Deleting this component will leave it\'s parent group empty. Delete the "' +
+parts[0] + '" group as well?'),
+...</pre></li>
     </ul>
 
 
@@ -655,7 +687,23 @@ createGroupDescription: function(group_path) {
 
     return ! error;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log();
+});
+                        }
+
+                        if (answers.delete_group) {
+utils.$data.groups.splice(groupIndex, 1);
+utils.<span class="apidocCodeKeywordSpan">deleteGroupFolder</span>(parts[0]);
+
+utils.saveData(function () {
+    console.log();
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log(chalk.green('\u2713 Group and component deleted successfully.'));
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log();
+...</pre></li>
     </ul>
 
 
@@ -683,7 +731,23 @@ createGroupDescription: function(group_path) {
 
     return false;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var group_name = program.args[0];
+if (group_name) {
+    var parts = group_name.split('/'),
+existingComponentIndex = utils.getComponentIndex(group_name),
+existingGroupIndex = utils.getGroupIndex(parts[0]);
+
+    if (existingComponentIndex !== undefined) {
+var component = utils.<span class="apidocCodeKeywordSpan">getComponent</span>(group_name);
+
+inquirer.prompt([
+    {
+        name: 'name',
+        message: function () {
+            console.log();
+            console.log(chalk.grey('Edit component details:'));
+...</pre></li>
     </ul>
 
 
@@ -741,7 +805,23 @@ createGroupDescription: function(group_path) {
 
     return choices;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return 'Change the position for the component in the "' + component.group + '" group:'
+    } else {
+        return 'Select a position for the component in the "' + response.new_group + '" group:'
+    }
+},
+choices: function (response) {
+    if (!response.change_group) {
+        return utils.<span class="apidocCodeKeywordSpan">getComponentChangePositionChoices</span>(component);
+    } else {
+        return utils.getComponentPositionChoices(response.new_group);
+    }
+},
+default: function (response) {
+    if (!response.change_group) {
+        return utils.getGroupComponentCount(component.group) - 1;
+...</pre></li>
     </ul>
 
 
@@ -768,7 +848,23 @@ createGroupDescription: function(group_path) {
         }
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Delete individual component.
+ */
+var group_name = program.args[0];
+if (group_name) {
+    var parts = group_name.split('/');
+
+    if (utils.componentExists(group_name) !== false) {
+var componentIndex = utils.<span class="apidocCodeKeywordSpan">getComponentIndex</span>(group_name),
+    groupIndex = utils.getGroupIndex(parts[0]);
+
+inquirer.prompt([
+    {
+        type: 'confirm',
+        name: 'delete',
+        message: function () {
+...</pre></li>
     </ul>
 
 
@@ -798,7 +894,22 @@ createGroupDescription: function(group_path) {
 
     return choices;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return 'Select a position for the component in the "' + response.new_group + '" group:'
+    }
+},
+choices: function (response) {
+    if (!response.change_group) {
+        return utils.getComponentChangePositionChoices(component);
+    } else {
+        return utils.<span class="apidocCodeKeywordSpan">getComponentPositionChoices</span>(response.new_group);
+    }
+},
+default: function (response) {
+    if (!response.change_group) {
+        return utils.getGroupComponentCount(component.group) - 1;
+    }
+...</pre></li>
     </ul>
 
 
@@ -922,7 +1033,22 @@ setup: function(path, callback) {
 
     return choices;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        },
+        default: group.title
+    },
+    {
+        type: 'list',
+        name: 'group_position',
+        message: 'Change the position for the group:',
+        choices: utils.<span class="apidocCodeKeywordSpan">getGroupChangePositionChoices</span>(group),
+        default: utils.getGroupCount(group) - 1
+    }
+]).then(function (answers) {
+    var originalGroup = utils.$data.groups[existingGroupIndex],
+        editedGroup = {},
+        error = false;
+...</pre></li>
     </ul>
 
 
@@ -959,7 +1085,23 @@ setup: function(path, callback) {
 
     return choices;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    when: function (response) {
+        return response.change_group;
+    },
+    type: 'list',
+    name: 'new_group',
+    message: 'Select a new group:',
+    choices: utils.<span class="apidocCodeKeywordSpan">getGroupChoices</span>(parts[0])
+},
+{
+    when: function (response) {
+        return !response.change_group || response.new_group != 'create_new_group';
+    },
+    type: 'list',
+    name: 'component_position',
+...</pre></li>
     </ul>
 
 
@@ -974,7 +1116,23 @@ setup: function(path, callback) {
     <li>description and source-code<pre class="apidocCodePre">getGroupComponentCount = function (group) {
     return this.$data.groups[this.getGroupIndex(group)].components.length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(chalk.green('\u2713 Deletion cancelled.'));
+console.log(chalk.grey('----------------------------------------------------------------'));
+console.log();
+return;
+            }
+
+            if (answers.delete) {
+var componentCount = utils.<span class="apidocCodeKeywordSpan">getGroupComponentCount</span>(parts[0]);
+
+utils.$data.groups[groupIndex].components.splice(componentIndex, 1);
+utils.deleteComponentFiles(group_name);
+
+if (componentCount == 1) {
+    inquirer.prompt([
+        {
+...</pre></li>
     </ul>
 
 
@@ -989,7 +1147,23 @@ setup: function(path, callback) {
     <li>description and source-code<pre class="apidocCodePre">getGroupCount = function (group) {
     return this.$data.groups.length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    default: group.title
+},
+{
+    type: 'list',
+    name: 'group_position',
+    message: 'Change the position for the group:',
+    choices: utils.getGroupChangePositionChoices(group),
+    default: utils.<span class="apidocCodeKeywordSpan">getGroupCount</span>(group) - 1
+}
+        ]).then(function (answers) {
+var originalGroup = utils.$data.groups[existingGroupIndex],
+    editedGroup = {},
+    error = false;
+
+editedGroup.name = answers.name;
+...</pre></li>
     </ul>
 
 
@@ -1007,21 +1181,21 @@ setup: function(path, callback) {
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-            return item.name == group;
-        });
-    },
+ */
+var group_name = program.args[0];
+if (group_name) {
+    var parts = group_name.split('/');
 
-    getComponentIndex: function(group_name) {
-        var _this = this,
-            parts = group_name.split("/"),
-            groupIndex = _this.<span class="apidocCodeKeywordSpan">getGroupIndex</span>(parts[0]);
+    if (utils.componentExists(group_name) !== false) {
+var componentIndex = utils.getComponentIndex(group_name),
+    groupIndex = utils.<span class="apidocCodeKeywordSpan">getGroupIndex</span>(parts[0]);
 
-        if (groupIndex !== -1) {
-            for (var i = 0; i &lt; _this.$data.groups[groupIndex].components.length; i++) {
-var c = _this.$data.groups[groupIndex].components[i];
-
-if (c.name == parts[1]) {
-    return i;
+inquirer.prompt([
+    {
+        type: 'confirm',
+        name: 'delete',
+        message: function () {
+            console.log();
 ...</pre></li>
     </ul>
 
@@ -1054,7 +1228,23 @@ if (c.name == parts[1]) {
 
     return choices;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    when: function (response) {
+        return response.change_group &amp;&amp; response.new_group == 'create_new_group';
+    },
+    type: 'list',
+    name: 'group_position',
+    message: 'Select group position:',
+    choices: utils.<span class="apidocCodeKeywordSpan">getGroupPositionChoices</span>()
+},
+{
+    when: function (response) {
+        return response.change_group &amp;&amp; utils.getGroupComponentCount(component.group) == 1;
+    },
+    type: 'confirm',
+    name: 'delete_group',
+...</pre></li>
     </ul>
 
 
@@ -1071,7 +1261,24 @@ if (c.name == parts[1]) {
 
     return this.getGroupIndex(parts[0]) == -1 ? false : true;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+for (var i = 0; i &lt; originalGroup.components.length; i++) {
+    editedGroup.components[i] = originalGroup.components[i];
+    editedGroup.components[i].group = answers.name;
+}
+
+// Check for duplicate data
+if (originalGroup.name != editedGroup.name &amp;&amp; utils.<span class="apidocCodeKeywordSpan">groupExists</span>(editedGroup
+.name)) {
+    console.log(chalk.red('Error: Group with same name already exists in.'));
+    error = true;
+}
+
+if (!error) {
+    // Remove original group in data
+    utils.$data.groups.splice(existingGroupIndex, 1);
+...</pre></li>
     </ul>
 
 
@@ -1101,20 +1308,21 @@ if (c.name == parts[1]) {
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+#!/usr/bin/env node
+var program = require('commander'),
+   fs = require('fs-extra'),
+   chalk = require('chalk'),
+   inquirer = require('inquirer'),
+   utils = require('./utils');
+
+utils.<span class="apidocCodeKeywordSpan">init</span>();
+
+program
+   .description(chalk.yellow('Delete a pattern library component or group.'))
+   .option('-g, --group [group_name]', 'delete group');
 
 /**
- * Get instance version number.
- */
-if (program.instance) {
-    try {
-        if(utils.getConfig()) {
-            utils.<span class="apidocCodeKeywordSpan">init</span>();
-            console.log(chalk.grey("This Astrum instance version is: ") + chalk.green(utils.$data.version));
-        }
-    } catch (e) {
-        console.log(chalk.red("Astrum has not been initialised."));
-    }
-}
+* Override argv[1] so that usage command is
 ...</pre></li>
     </ul>
 
@@ -1147,7 +1355,23 @@ if (program.instance) {
 
     return ! error;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            if (!error) {
+                // Remove original component in data
+                utils.$data.groups[existingGroupIndex].components.splice(existingComponentIndex, 1);
+                utils.$data.groups[editedGroupIndex].components.splice(answers.component_position, 0, editedComponent);
+
+                // Move component files
+                if (utils.<span class="apidocCodeKeywordSpan">moveComponentFiles</span>(originalComponent, editedComponent)) {
+
+                    if (answers.delete_group) {
+utils.$data.groups.splice(existingGroupIndex, 1);
+utils.deleteGroupFolder(originalComponent.group);
+
+console.log();
+console.log(chalk.grey('----------------------------------------------------------------'));
+...</pre></li>
     </ul>
 
 
@@ -1176,7 +1400,23 @@ if (program.instance) {
 
     return ! error;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                // Remove original group in data
+                utils.$data.groups.splice(existingGroupIndex, 1);
+
+                // Add edited group to data
+                utils.$data.groups.splice(answers.group_position, 0, editedGroup);
+
+                // Move component files
+                if (utils.<span class="apidocCodeKeywordSpan">moveGroupFolder</span>(originalGroup, editedGroup)) {
+
+utils.saveData(function () {
+    console.log();
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log(chalk.green('\u2713 Pattern library data saved successfully.'));
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log();
+...</pre></li>
     </ul>
 
 
@@ -1221,7 +1461,16 @@ if (program.instance) {
 
     console.log();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    utils = require('./utils');
+
+utils.init();
+
+program
+    .parse(process.argv);
+
+utils.<span class="apidocCodeKeywordSpan">outputList</span>(utils.$data.components, utils.$data.groups);
+...</pre></li>
     </ul>
 
 
@@ -1330,21 +1579,22 @@ fs.copy(_this.pathify(_this.module_path + '/_template'), path, function (err) {
     return ! error;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    return ! error;
-});
-    },
+    message: chalk.red('Deleting this component will leave it\'s parent group empty. Delete the "' + parts[0
+] + '" group as well?'),
+    default: true
+}
+                    ]).then(function (answers) {
 
-    updateVersion: function(number) {
-this.$data.version = number;
+if (!answers.delete_group) {
 
-this.<span class="apidocCodeKeywordSpan">saveData</span>(function(){});
-    },
-
-    update: function(callback) {
-var _this = this;
-
-fs.exists(_this.$config.path, function(r) {
-    if (!r) {
+    utils.<span class="apidocCodeKeywordSpan">saveData</span>(function () {
+        console.log();
+        console.log(chalk.grey('----------------------------------------------------------------'));
+        console.log(chalk.green('\u2713 Component deleted successfully.'));
+        console.log(chalk.grey('----------------------------------------------------------------'));
+        console.log();
+    });
+}
 ...</pre></li>
     </ul>
 
@@ -1450,7 +1700,22 @@ utils.<span class="apidocCodeKeywordSpan">setup</span>(path, function() {
 
     return callback();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+oldVersion = utils.$data.version;
+newVersion = utils.$pjson.version;
+
+/**
+ * Force restore instance.
+ */
+if (program.force &amp;&amp; newVersion == oldVersion) {
+utils.<span class="apidocCodeKeywordSpan">update</span>(function () {
+    console.log();
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log(chalk.green('\u2713 Pattern library forcibly restored to ' + newVersion + '.'));
+    console.log(chalk.grey('----------------------------------------------------------------'));
+    console.log();
+});
+...</pre></li>
     </ul>
 
 
@@ -1513,7 +1778,23 @@ utils.<span class="apidocCodeKeywordSpan">setup</span>(path, function() {
 
     return true;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Create new component
+ */
+var group_name = program.args[0];
+if (group_name) {
+
+    if (group_name !== true &amp;&amp; utils.<span class="apidocCodeKeywordSpan">validateComponent</span>(group_name)) {
+
+// Build new component
+var parts = group_name.split("/"),
+    newComponent = {};
+
+newComponent.group = parts[0];
+newComponent.name = parts[1];
+...</pre></li>
     </ul>
 
 
@@ -1530,7 +1811,23 @@ utils.<span class="apidocCodeKeywordSpan">setup</span>(path, function() {
 
     return this.validateString(string) &amp;&amp; slug &amp;&amp; !! slug.length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    message: function () {
+        console.log();
+        console.log(chalk.grey('Edit component details:'));
+        console.log(chalk.grey('----------------------------------------------------------------'));
+        return 'Component name:'
+    },
+    validate: function (str) {
+        return utils.<span class="apidocCodeKeywordSpan">validateSlug</span>(str);
+    },
+    default: component.name
+},
+{
+    name: 'title',
+    message: 'Component title:',
+    validate: function (str) {
+...</pre></li>
     </ul>
 
 
@@ -1546,21 +1843,21 @@ utils.<span class="apidocCodeKeywordSpan">setup</span>(path, function() {
     return string != '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-
-    return false;
+    },
+    default: component.name
 },
-
-validateSlug: function(string) {
-    var slug = string.match(/^[a-z0-9-]+$/);
-
-    return this.<span class="apidocCodeKeywordSpan">validateString</span>(string) &amp;&amp; slug &amp;&amp; !! slug.length;
+{
+    name: 'title',
+    message: 'Component title:',
+    validate: function (str) {
+        return utils.<span class="apidocCodeKeywordSpan">validateString</span>(str);
+    },
+    default: component.title
 },
-
-validateString: function(string) {
-    return string != '';
-},
-
-pathify: function(path) {
+{
+    when: function () {
+        return !component.type || component.type !== 'colors';
+    },
 ...</pre></li>
     </ul>
 
