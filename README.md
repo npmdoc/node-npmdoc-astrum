@@ -1,6 +1,6 @@
 # npmdoc-astrum
 
-#### api documentation for  [astrum (v1.9.3)](https://github.com/NoDivide/astrum#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-astrum.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-astrum) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-astrum.svg)](https://travis-ci.org/npmdoc/node-npmdoc-astrum)
+#### basic api documentation for  [astrum (v1.9.3)](https://github.com/NoDivide/astrum#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-astrum.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-astrum) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-astrum.svg)](https://travis-ci.org/npmdoc/node-npmdoc-astrum)
 
 #### A lightweight pattern library designed to be included with any web project.
 
